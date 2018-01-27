@@ -19,6 +19,8 @@ public class BaseCharacter : MonoBehaviour
     protected float jumpUp = 400;
     float jumpUpVar = 0;
 
+    protected bool onGround = false;
+
     //Rigidbody of the component
     protected Rigidbody2D rd;
    
@@ -43,6 +45,15 @@ public class BaseCharacter : MonoBehaviour
     protected void Move()
     {
         
+        if(Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
+        {
+            onGround = true;
+        }
+        else
+        {
+            onGround = false;
+        }
+
         rd.velocity = new Vector2(input.x * maxSpeed *  1, rd.velocity.y);
 
         //Jump
