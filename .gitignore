@@ -33,3 +33,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+/Tv_land/.vs
+/Tv_land/Library
+/Tv_land/Library
+/Tv_land/.vs
