@@ -12,12 +12,6 @@ public class Camera : MonoBehaviour
     float lerpSpeed = 1;
 
     Vector3 velocity = Vector3.zero;
-
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
 	
 	// Update is called once per frame
 	void Update ()

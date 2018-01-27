@@ -53,11 +53,7 @@ public class BaseCharacter : MonoBehaviour
         //Move left
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * slideDistance * Time.deltaTime);
+            rd.AddForce(-moveSpeed, 0, 0, ForceMode.Force);
         }
 
         //Jump
