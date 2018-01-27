@@ -187,7 +187,7 @@ public class GrappleHook : MonoBehaviour {
         {
             reelingIn = true;
         float d=    Vector2.Distance(eye.transform.position, transform.position);
-            Debug.Break();
+         //   Debug.Break();
         }
         if (collision == false && (Vector2)transform.position == destiny)
         {
