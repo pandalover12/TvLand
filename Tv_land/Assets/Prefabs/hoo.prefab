@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 50709500169041874}
   - component: {fileID: 233934968403768380}
   - component: {fileID: 61830716644253442}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: hoo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ MonoBehaviour:
   slowspeed: 0.01
   zoominSpeed: 0.1
   distance: 0.5
-  maxDistance: 10
+  maxDistance: 5
   nodePrefab: {fileID: 1801577301168156, guid: 89ec78891d6dbe6469f09ff327d66783, type: 2}
   player: {fileID: 0}
   secondNode: {fileID: 0}
