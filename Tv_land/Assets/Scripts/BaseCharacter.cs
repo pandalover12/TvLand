@@ -5,8 +5,14 @@ using UnityEngine;
 public class BaseCharacter : MonoBehaviour
 {
     [Header("Speed the character moves with")]
+
     [SerializeField]
-    float moveSpeed = 10;
+    float maxSpeed;
+    Vector2 input;
+
+    [Header("Distanc player slides on releasing key")]
+    [SerializeField]
+    float slideDistance = 5;
 
     [Header("Amount of thrust player gets on jumping")]
     [SerializeField]
@@ -17,52 +23,46 @@ public class BaseCharacter : MonoBehaviour
     //float jumpDirection = 10;
 
     //Rigidbody of the component
-    Rigidbody rd;
+    protected Rigidbody2D rd;
 
     //Jump cooldown
-    [Header("Cooldown for jumping")]
-    [SerializeField]
-    float jumpCooldown = 1.6f;
-    float jumpVar = 0;
-
-	// Use this for initialization
-	void Start ()
-    {
-        rd = GetComponent<Rigidbody>();
-        jumpVar = jumpCooldown;
-	}
+    //[Header("Cooldown for jumping")]
+    //[SerializeField]
+    //protected float jumpCooldown = 1.6f;
+    //protected float jumpVar = 0;
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        jumpCooldown -= Time.deltaTime;
         Move();
     }
 
-    void Move()
+    protected void Initialize()
     {
+        rd = GetComponent<Rigidbody2D>();
+        //jumpVar = jumpCooldown;
+    }
+
+    protected void Move()
+    {
+        //jumpCooldown -= Time.deltaTime;
         //Move right
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-        }
-        //Move left
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        }
+        rd.velocity = new Vector2(input.x * maxSpeed *  1, rd.velocity.y);
+
         //Jump
-        if(Input.GetKey(KeyCode.W) && jumpCooldown <= 0)
+        if (Input.GetKey(KeyCode.Space) && Physics.Raycast(transform.position, Vector3.down, 1))
         {
             rd.AddForce(new Vector3(0, jumpUp, 0));
-            jumpCooldown = jumpVar;
+           // jumpCooldown = jumpVar;
         }
         //Todo: play crouch animation
-        if(Input.GetKey(KeyCode.S))
+        if(Input.GetKey(KeyCode.C))
         {
 
         }
-        
+        input.x = Input.GetAxis("Horizontal");
+        input.y = Input.GetAxis("Vertical");
+
     }
 
 }
