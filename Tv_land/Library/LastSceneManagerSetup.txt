@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/Aroosh.unity
+- path: Assets/Scene/Div.unity
   isLoaded: 1
   isActive: 1
