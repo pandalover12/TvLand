@@ -7,7 +7,7 @@ public class BaseCharacter : MonoBehaviour
     [Header("Speed the character moves with")]
 
     [SerializeField]
-    protected float maxSpeed;
+    protected float maxSpeed = 5;
     [SerializeField]
     protected Vector2 input;
 
@@ -17,7 +17,7 @@ public class BaseCharacter : MonoBehaviour
 
     [Header("Amount of thrust player gets on jumping")]
     [SerializeField]
-    protected float jumpUp = 400;
+    protected float jumpUp = 800;
     protected float jumpVar = 1f;
 
     protected bool onGround = false;
@@ -42,10 +42,10 @@ public class BaseCharacter : MonoBehaviour
         jumpVar = jumpUp;
     }
 
-    protected void Move()
+    protected void Move(bool velocityInAir = true)
     {
         
-        if(Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
+        if(Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f)&&velocityInAir==false)
         {
             onGround = true;
             //jumpUp = jumpVar;
@@ -57,8 +57,8 @@ public class BaseCharacter : MonoBehaviour
             //jumpUp -= Time.deltaTime;
            
         }
-
- 
+        if(velocityInAir)
+            rd.velocity = new Vector2(input.x * maxSpeed * 1, rd.velocity.y);
 
         //Jump
         if (Input.GetKey(KeyCode.Space) && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))

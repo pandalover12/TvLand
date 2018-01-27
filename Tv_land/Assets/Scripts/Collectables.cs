@@ -29,6 +29,7 @@ public class Collectables : MonoBehaviour
 
 	void FixedUpdate ()
     {
-		//if (character.collider2D)
+		
+
 	}
 }

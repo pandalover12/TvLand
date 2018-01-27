@@ -5,10 +5,13 @@ using UnityEngine;
 public class Materalcontrol : MonoBehaviour {
     [SerializeField]
     GameObject[] ALWAYSTHESAMEbutnotsamemat = new GameObject[100];
+    [SerializeField]
     GameObject[] extraherostuff = new GameObject[10];
+    [SerializeField]
     GameObject[] extrawesternstuff = new GameObject[10];
+    [SerializeField]
     GameObject[] extrahamer = new GameObject[10];
-    public  int switchmat = 0;
+    public  int switchmat = 1;
 
     // Use this for initialization
     void Start () {
@@ -17,7 +20,7 @@ public class Materalcontrol : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (switchmat == 0) {
+        if (switchmat == 1) {
 
             for (int i = 0; i < 4; ++i)
             {
@@ -25,19 +28,19 @@ public class Materalcontrol : MonoBehaviour {
             }
            for(int i =0; i < extraherostuff.Length; ++i)
             {
-        //        extraherostuff[i].SetActive(  true);
+                extraherostuff[i].SetActive(  true);
             }
             for (int i = 0; i < extrawesternstuff.Length; ++i)
             {
-        //        extrawesternstuff[i].SetActive(false);
+              extrawesternstuff[i].SetActive(false);
             }
             for (int i = 0; i < extrahamer.Length; ++i)
             {
-        //        extrahamer[i].SetActive(false);
+               extrahamer[i].SetActive(false);
             }
 
         }
-   else     if (switchmat == 1)
+   else     if (switchmat == 2)
         {
 
             for (int i = 0; i < 4; ++i)
@@ -46,19 +49,19 @@ public class Materalcontrol : MonoBehaviour {
             }
             for (int i = 0; i < extraherostuff.Length; ++i)
             {
-       //         extraherostuff[i].SetActive(false);
+              extraherostuff[i].SetActive(false);
             }
             for (int i = 0; i < extrawesternstuff.Length; ++i)
             {
-       //         extrawesternstuff[i].SetActive(true);
+                extrawesternstuff[i].SetActive(true);
             }
             for (int i = 0; i < extrahamer.Length; ++i)
             {
-       //         extrahamer[i].SetActive(false);
+                extrahamer[i].SetActive(false);
             }
 
         }
- else       if (switchmat == 2)
+ else       if (switchmat == 3)
         {
 
             for (int i = 0; i < 4; ++i)
@@ -67,15 +70,15 @@ public class Materalcontrol : MonoBehaviour {
             }
             for (int i = 0; i < extraherostuff.Length; ++i)
             {
-    //            extraherostuff[i].SetActive(false);
+                extraherostuff[i].SetActive(false);
             }
             for (int i = 0; i < extrawesternstuff.Length; ++i)
             {
-     //           extrawesternstuff[i].SetActive(false);
+                extrawesternstuff[i].SetActive(false);
             }
             for (int i = 0; i < extrahamer.Length; ++i)
             {
-    //            extrahamer[i].SetActive(true);
+                extrahamer[i].SetActive(true);
             }
 
         }

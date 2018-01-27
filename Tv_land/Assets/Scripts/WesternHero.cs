@@ -45,7 +45,7 @@ public class WesternHero : BaseCharacter
             grappleScript.DestroyGrapple();
             rd.AddForce(new Vector2(0, jumpUp));
         }
-            base.Move();
+            base.Move(false);
         if (grappleScript.GetCurHook() == null && onGround == false)
         {
             rd.velocity = new Vector2(input.x * maxSpeed * 1, rd.velocity.y);

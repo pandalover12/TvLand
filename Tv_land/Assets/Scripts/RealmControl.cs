@@ -4,59 +4,108 @@ using UnityEngine;
 
 public class RealmControl : MonoBehaviour {
     [SerializeField]
-    WesternHero westhero;
+    WesternHero westernHero;
     [SerializeField]
-    MidievalHero hamerguy;
+    MidievalHero midievalHero;
     [SerializeField]
-    SuperHero superguys;
+    SuperHero superHero;
     [SerializeField]
     Materalcontrol mat;
     bool button = false;
     float mouseWheelState = 0;
+    [SerializeField]
+    int channelNo = 2;
+    enum Channel {Super, Western, Midieval};
 
 
     // Use this for initialization
     void Start ()
     {
-        superguys.enabled = true;
+        superHero.enabled = true;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        //mouseWheelState = Input.GetAxis("Mouse ScrollWheel");
-        //Debug.Log(mouseWheelState);
-        if ((Input.GetKey(KeyCode.L))&& button==false) { 
-            if (superguys.enabled == true)
-            {
-              
-                mat.switchmat = 1;
-                superguys.enabled = false;
-                westhero.enabled = true;
-            }
-            else if (westhero.enabled == true)
-            {
-               
-                mat.switchmat = 2;
-                westhero.enabled = false;
-                hamerguy.enabled = true;
-            }
-
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            if (channelNo > 1)
+                ChangeChannel(--channelNo);
             else
-            {
-               
-                mat.switchmat = 0;
-                hamerguy.enabled = false;
-                superguys.enabled = true;
-            }
-            button = true;
-            StartCoroutine(buttonbounce());
+                ChangeChannel(channelNo += 2);
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            if (channelNo < 3)
+                ChangeChannel(++channelNo);
+            else
+                ChangeChannel(channelNo -= 2);
         }
 
+
+    //    if ((Input.GetKey(KeyCode.L)) && button == false)
+    //    {
+    //        if (superHero.enabled == true)
+    //        {
+
+    //            mat.switchmat = 1;
+    //            superHero.enabled = false;
+    //            westernHero.enabled = true;
+    //        }
+    //        else if (westernHero.enabled == true)
+    //        {
+
+    //            mat.switchmat = 2;
+    //            westernHero.enabled = false;
+    //            midievalHero.enabled = true;
+    //        }
+
+    //        else
+    //        {
+
+    //            mat.switchmat = 0;
+    //            midievalHero.enabled = false;
+    //            superHero.enabled = true;
+    //        }
+    //        button = true;
+    //        StartCoroutine(buttonbounce());
+    //    }
+
     }
-    IEnumerator buttonbounce()
+    //IEnumerator buttonbounce()
+    //{
+    //    yield return new WaitForSeconds(0.4f);
+    //    button = false;
+    //}
+
+    public void ChangeChannel(int num)
     {
-        yield return new WaitForSeconds(0.4f);
-        button = false;
+        switch (num)
+        {
+                
+            case 1: //channel 1: Super Hero
+                superHero.enabled = true;
+                westernHero.enabled = false;
+                midievalHero.enabled = false;
+                mat.switchmat = 1;
+                break;
+            case 2: //channel 2: Western Hero
+                westernHero.enabled = true;
+                superHero.enabled = false;
+                midievalHero.enabled = false;
+                mat.switchmat = 2;
+                break;
+            case 3: //channel 3: Midieval Hero
+                midievalHero.enabled = true;
+                superHero.enabled = false;
+                westernHero.enabled = false;
+             //   Debug.Break();
+                mat.switchmat = 3;
+                break;
+            default:
+                Debug.Log("Error changing channel");
+                break;
+        }
+
     }
 }
