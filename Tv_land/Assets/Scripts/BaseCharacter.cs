@@ -8,6 +8,7 @@ public class BaseCharacter : MonoBehaviour
 
     [SerializeField]
     protected float maxSpeed;
+    [SerializeField]
     protected Vector2 input;
 
     [Header("Distanc player slides on releasing key")]
@@ -48,14 +49,16 @@ public class BaseCharacter : MonoBehaviour
         {
             onGround = true;
             //jumpUp = jumpVar;
+            rd.velocity = new Vector2(input.x * maxSpeed * 1, rd.velocity.y);
         }
         else
         {
             onGround = false;
             //jumpUp -= Time.deltaTime;
+           
         }
 
-        rd.velocity = new Vector2(input.x * maxSpeed *  1, rd.velocity.y);
+ 
 
         //Jump
         if (Input.GetKey(KeyCode.Space) && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
