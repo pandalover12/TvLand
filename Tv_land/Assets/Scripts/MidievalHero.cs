@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MidievalHero : BaseCharacter
 {
+    [SerializeField]
+    GameObject hammer;
 
 	// Use this for initialization
 	void Start ()
@@ -22,6 +24,14 @@ public class MidievalHero : BaseCharacter
         }
         
 	}
+    public void EnableHammer()
+    {
+        hammer.SetActive(true);
+    }
+    public void DsableHammer()
+    {
+        hammer.SetActive(false);
+    }
 
 }
 
