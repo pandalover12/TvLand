@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakableObject : MonoBehaviour {
+public class BreakableObject : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "Hammer" && Input.GetKey(KeyCode.Mouse0))
+        {
+            GetComponent<Rigidbody>().AddExplosionForce(1000, collision.transform.position, 1000);
+        }
+    }
+
 }
