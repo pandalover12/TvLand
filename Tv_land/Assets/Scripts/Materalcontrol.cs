@@ -22,7 +22,7 @@ public class Materalcontrol : MonoBehaviour {
 	void Update () {
         if (switchmat == 1) {
 
-            for (int i = 0; i < 4; ++i)
+            for (int i = 0; i < ALWAYSTHESAMEbutnotsamemat.Length; ++i)
             {
                 ALWAYSTHESAMEbutnotsamemat[i].GetComponent<my3mats>().swtcher = 0;
             }
