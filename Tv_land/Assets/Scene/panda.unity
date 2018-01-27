@@ -682,7 +682,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1190639103}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60e3f5a04d0a6e249a9cac99accf1363, type: 3}
   m_Name: 
@@ -943,6 +943,39 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  extraherostuff:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  extrawesternstuff:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  extrahamer:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   switchmat: 0
 --- !u!114 &1190639113
 MonoBehaviour:
@@ -986,10 +1019,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf2797e850acb24a99c1c445aac9960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  westhero: {fileID: 1190639104}
-  hamerguy: {fileID: 1190639113}
-  superguys: {fileID: 1190639114}
+  westernHero: {fileID: 1190639104}
+  midievalHero: {fileID: 1190639113}
+  superHero: {fileID: 1190639114}
   mat: {fileID: 1190639112}
+  channelNo: 2
 --- !u!1 &1551499848
 GameObject:
   m_ObjectHideFlags: 0

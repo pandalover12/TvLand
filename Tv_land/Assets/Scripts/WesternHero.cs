@@ -90,5 +90,9 @@ public class WesternHero : BaseCharacter
             }
         }
     }
+  public  void destroy()
+    {
+        grappleScript.DestroyGrapple();
+    }
 
 }

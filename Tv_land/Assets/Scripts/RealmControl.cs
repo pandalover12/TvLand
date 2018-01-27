@@ -85,6 +85,8 @@ public class RealmControl : MonoBehaviour {
                 
             case 1: //channel 1: Super Hero
                 superHero.enabled = true;
+                if(westernHero.enabled==true)
+                westernHero.destroy();
                 westernHero.enabled = false;
                 midievalHero.enabled = false;
                 mat.switchmat = 1;
@@ -98,6 +100,8 @@ public class RealmControl : MonoBehaviour {
             case 3: //channel 3: Midieval Hero
                 midievalHero.enabled = true;
                 superHero.enabled = false;
+                if (westernHero.enabled == true)
+                    westernHero.destroy();
                 westernHero.enabled = false;
              //   Debug.Break();
                 mat.switchmat = 3;
