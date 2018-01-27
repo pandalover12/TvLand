@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 219007171}
   - component: {fileID: 219007170}
   - component: {fileID: 219007169}
+  - component: {fileID: 219007173}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -281,6 +282,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &219007173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219007168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ca59516705dcd44b026df2085e5ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 219007170}
+  hero: {fileID: 2100000, guid: 4426478e050e18b4eba9fe8a1e2d6ad2, type: 2}
+  western: {fileID: 2100000, guid: 429ee90fde1ceb944ac33eac56054a9a, type: 2}
+  hammer: {fileID: 2100000, guid: ab6f0de1839b4ef41ab9cd25fdb95dff, type: 2}
+  swtcher: 0
 --- !u!1001 &249815483
 Prefab:
   m_ObjectHideFlags: 0
@@ -338,6 +355,7 @@ GameObject:
   - component: {fileID: 331791210}
   - component: {fileID: 331791208}
   - component: {fileID: 331791209}
+  - component: {fileID: 331791212}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: pullAbleObject
@@ -424,6 +442,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331791212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331791207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ca59516705dcd44b026df2085e5ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 331791208}
+  hero: {fileID: 2100000, guid: 4426478e050e18b4eba9fe8a1e2d6ad2, type: 2}
+  western: {fileID: 2100000, guid: 429ee90fde1ceb944ac33eac56054a9a, type: 2}
+  hammer: {fileID: 2100000, guid: ab6f0de1839b4ef41ab9cd25fdb95dff, type: 2}
+  swtcher: 0
 --- !u!1001 &457152250
 Prefab:
   m_ObjectHideFlags: 0
@@ -551,6 +585,7 @@ GameObject:
   - component: {fileID: 773782320}
   - component: {fileID: 773782318}
   - component: {fileID: 773782319}
+  - component: {fileID: 773782322}
   m_Layer: 10
   m_Name: Plane
   m_TagString: Ground
@@ -637,6 +672,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &773782322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773782317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ca59516705dcd44b026df2085e5ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 773782318}
+  hero: {fileID: 2100000, guid: 4426478e050e18b4eba9fe8a1e2d6ad2, type: 2}
+  western: {fileID: 2100000, guid: 429ee90fde1ceb944ac33eac56054a9a, type: 2}
+  hammer: {fileID: 2100000, guid: ab6f0de1839b4ef41ab9cd25fdb95dff, type: 2}
+  swtcher: 0
 --- !u!1 &777389176
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,6 +826,11 @@ GameObject:
   - component: {fileID: 1190639105}
   - component: {fileID: 1190639104}
   - component: {fileID: 1190639110}
+  - component: {fileID: 1190639111}
+  - component: {fileID: 1190639115}
+  - component: {fileID: 1190639114}
+  - component: {fileID: 1190639113}
+  - component: {fileID: 1190639112}
   m_Layer: 9
   m_Name: Cube
   m_TagString: Player
@@ -920,6 +976,178 @@ MonoBehaviour:
   maxDistance: 2
   speed: 0.8
   noadMax: 10
+--- !u!114 &1190639111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190639103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ca59516705dcd44b026df2085e5ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 1190639107}
+  hero: {fileID: 2100000, guid: 4426478e050e18b4eba9fe8a1e2d6ad2, type: 2}
+  western: {fileID: 2100000, guid: 429ee90fde1ceb944ac33eac56054a9a, type: 2}
+  hammer: {fileID: 2100000, guid: ab6f0de1839b4ef41ab9cd25fdb95dff, type: 2}
+  swtcher: 0
+--- !u!114 &1190639112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190639103}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0960ef456de317c4fa4dbfe10269c758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ALWAYSTHESAMEbutnotsamemat:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  switchmat: 0
+--- !u!114 &1190639113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190639103}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db3b4963fd87386438e49c738f7b1db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 0
+  slideDistance: 5
+  jumpUp: 400
+--- !u!114 &1190639114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190639103}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5231e05ebb2a735489a5008acbeaab2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 0
+  slideDistance: 5
+  jumpUp: 400
+--- !u!114 &1190639115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190639103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf2797e850acb24a99c1c445aac9960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  westhero: {fileID: 1190639104}
+  hamerguy: {fileID: 1190639113}
+  superguys: {fileID: 1190639114}
+  mat: {fileID: 1190639112}
 --- !u!1 &1551499848
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,6 +1159,7 @@ GameObject:
   - component: {fileID: 1551499851}
   - component: {fileID: 1551499850}
   - component: {fileID: 1551499849}
+  - component: {fileID: 1551499853}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -1017,6 +1246,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1551499853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551499848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ca59516705dcd44b026df2085e5ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 1551499850}
+  hero: {fileID: 2100000, guid: 4426478e050e18b4eba9fe8a1e2d6ad2, type: 2}
+  western: {fileID: 2100000, guid: 429ee90fde1ceb944ac33eac56054a9a, type: 2}
+  hammer: {fileID: 2100000, guid: ab6f0de1839b4ef41ab9cd25fdb95dff, type: 2}
+  swtcher: 0
 --- !u!1 &2056491603
 GameObject:
   m_ObjectHideFlags: 0
