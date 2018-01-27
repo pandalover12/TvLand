@@ -17,6 +17,7 @@ public class BaseCharacter : MonoBehaviour
     [Header("Amount of thrust player gets on jumping")]
     [SerializeField]
     protected float jumpUp = 400;
+    float jumpUpVar = 0;
 
     //Rigidbody of the component
     protected Rigidbody2D rd;
@@ -35,6 +36,8 @@ public class BaseCharacter : MonoBehaviour
     protected void Initialize()
     {
         rd = GetComponent<Rigidbody2D>();
+        jumpUpVar = jumpUp;
+        jumpUp = 0;
     }
 
     protected void Move()
@@ -43,15 +46,24 @@ public class BaseCharacter : MonoBehaviour
         rd.velocity = new Vector2(input.x * maxSpeed *  1, rd.velocity.y);
 
         //Jump
-        if (Input.GetKey(KeyCode.Space) && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
+        if (Input.GetKeyDown(KeyCode.Space) && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
         {
-            rd.AddForce(new Vector3(0, jumpUp, 0));
+            rd.AddForce(new Vector2(0, jumpUp));
+            jumpUp = jumpUpVar;
         }
+        else if(Input.GetKey(KeyCode.Space))
+        {
+            rd.AddForce(new Vector2(0, jumpUp));
+            if(jumpUp > 0)
+                jumpUp -= 100;
+        }
+
         //Todo: play crouch animation
         if(Input.GetKey(KeyCode.C))
         {
 
         }
+
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
 
