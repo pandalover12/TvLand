@@ -45,13 +45,14 @@ public class BaseCharacter : MonoBehaviour
         if(Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
         {
             onGround = true;
+            
+        rd.velocity = new Vector2(input.x * maxSpeed *  1, rd.velocity.y);
         }
         else
         {
             onGround = false;
         }
 
-        rd.velocity = new Vector2(input.x * maxSpeed *  1, rd.velocity.y);
 
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.2f))

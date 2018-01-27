@@ -13,7 +13,7 @@ public class WesternHero : BaseCharacter
     [SerializeField]
     float grappledControl = 0.5f;
     float inAirSpeedMult = 0.5f;
-    bool ground = true; 
+  
     [SerializeField]
     GameObject GrappleTarget;
     [SerializeField]
@@ -37,12 +37,16 @@ public class WesternHero : BaseCharacter
             zeropo.z = 0;
             GrappleTarget.transform.position = zeropo;
             grappleScript.StartGrapple();
-
+         //   Debug.Break();
 
         }
-        base.Move();
+        if (Input.GetKey(KeyCode.Space)&&grappleScript.GetCurHook()!=null)
+        {
+            grappleScript.DestroyGrapple();
+        }
+            base.Move();
 
-              if (grappleScript.GetCurHook() != null && grappleScript.GetCurHook().GetComponent<GrappleHook>().GetGrappleHookDone() && !grappleScript.GetCurHook().GetComponent<GrappleHook>().reelingIn && Mathf.Abs(input.x) > float.Epsilon&&ground==false)
+              if (grappleScript.GetCurHook() != null && grappleScript.GetCurHook().GetComponent<GrappleHook>().GetGrappleHookDone() && !grappleScript.GetCurHook().GetComponent<GrappleHook>().reelingIn && Mathf.Abs(input.x) > float.Epsilon&& onGround == false)
         {
 
 
@@ -73,7 +77,7 @@ public class WesternHero : BaseCharacter
         {
          //   RaycastHit2D wallHit = Physics2D.Raycast(transform.position, (Vector2.right * input.x).normalized, 0.5f, groundlayer);
             Debug.DrawRay(transform.position, (Vector2.right * input.x).normalized, Color.white, Time.deltaTime);
-        //    if (wallHit.collider == null && (Mathf.Sign(input.x) != Mathf.Sign(rd.velocity.x) || Mathf.Abs(rd.velocity.x) < maxSpeed))
+            if (/*wallHit.collider == null &&*/ (Mathf.Sign(input.x) != Mathf.Sign(rd.velocity.x) || Mathf.Abs(rd.velocity.x) < 7))
             {
                 rd.velocity += Vector2.right * input.x * inAirSpeedMult;
                 Debug.Log("Swing");
