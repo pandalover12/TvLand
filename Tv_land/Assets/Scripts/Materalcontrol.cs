@@ -43,7 +43,7 @@ public class Materalcontrol : MonoBehaviour {
    else     if (switchmat == 2)
         {
 
-            for (int i = 0; i < 4; ++i)
+            for (int i = 0; i < ALWAYSTHESAMEbutnotsamemat.Length; ++i)
             {
                 ALWAYSTHESAMEbutnotsamemat[i].GetComponent<my3mats>().swtcher = 1;
             }
@@ -64,7 +64,7 @@ public class Materalcontrol : MonoBehaviour {
  else       if (switchmat == 3)
         {
 
-            for (int i = 0; i < 4; ++i)
+            for (int i = 0; i < ALWAYSTHESAMEbutnotsamemat.Length; ++i)
             {
                 ALWAYSTHESAMEbutnotsamemat[i].GetComponent<my3mats>().swtcher = 2;
             }
