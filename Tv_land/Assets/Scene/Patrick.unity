@@ -206,8 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137e19af36a163a4db46a21914860867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 434312148}
-  lerpSpeed: 0.2
 --- !u!1 &434312148
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +219,7 @@ GameObject:
   - component: {fileID: 434312151}
   - component: {fileID: 434312149}
   - component: {fileID: 434312154}
+  - component: {fileID: 434312155}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -242,7 +241,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -340,7 +339,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 10
   slideDistance: 5
-  jumpUp: 400
+  jumpUp: 800
+--- !u!114 &434312155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 434312148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5231e05ebb2a735489a5008acbeaab2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 10
+  slideDistance: 5
+  jumpUp: 800
+  superJumpMultiplier: 1.5
 --- !u!1 &533086334
 GameObject:
   m_ObjectHideFlags: 0
