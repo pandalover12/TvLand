@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WesternHero : BaseCharacter {
+public class WesternHero : BaseCharacter
+{
     [SerializeField]
     GrappleScpt grappleScript;
     [SerializeField]
