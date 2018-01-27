@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class Camera2 : MonoBehaviour
 {
     [Header("Drag and drop player gameobject here")]
     [SerializeField]
