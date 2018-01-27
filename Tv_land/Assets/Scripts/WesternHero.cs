@@ -12,7 +12,7 @@ public class WesternHero : BaseCharacter {
     [SerializeField]
     float grappledControl = 0.5f;
     float inAirSpeedMult = 0.5f;
-    bool ground = true;
+    bool ground = true; 
     [SerializeField]
     GameObject GrappleTarget;
     [SerializeField]
