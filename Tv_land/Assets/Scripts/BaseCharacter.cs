@@ -8,6 +8,7 @@ public class BaseCharacter : MonoBehaviour
 
     [SerializeField]
     protected float maxSpeed;
+    [SerializeField]
     protected Vector2 input;
 
     [Header("Distanc player slides on releasing key")]
@@ -17,6 +18,9 @@ public class BaseCharacter : MonoBehaviour
     [Header("Amount of thrust player gets on jumping")]
     [SerializeField]
     protected float jumpUp = 400;
+    protected float jumpVar = 1f;
+
+    protected bool onGround = false;
 
     //Rigidbody of the component
     protected Rigidbody2D rd;
@@ -35,23 +39,39 @@ public class BaseCharacter : MonoBehaviour
     protected void Initialize()
     {
         rd = GetComponent<Rigidbody2D>();
+        jumpVar = jumpUp;
     }
 
     protected void Move()
     {
         
-        rd.velocity = new Vector2(input.x * maxSpeed *  1, rd.velocity.y);
+        if(Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
+        {
+            onGround = true;
+            //jumpUp = jumpVar;
+            rd.velocity = new Vector2(input.x * maxSpeed * 1, rd.velocity.y);
+        }
+        else
+        {
+            onGround = false;
+            //jumpUp -= Time.deltaTime;
+           
+        }
+
+ 
 
         //Jump
-        if (Input.GetKey(KeyCode.Space) && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.2f), Vector2.down, 0.1f))
+        if (Input.GetKey(KeyCode.Space) && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
         {
-            rd.AddForce(new Vector3(0, jumpUp, 0));
+            rd.AddForce(new Vector2(0, jumpUp));
         }
+
         //Todo: play crouch animation
         if(Input.GetKey(KeyCode.C))
         {
 
         }
+
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
 
