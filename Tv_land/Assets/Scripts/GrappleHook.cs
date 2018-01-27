@@ -207,7 +207,11 @@ public class GrappleHook : MonoBehaviour {
         {
             return;
         }
-       
+
+        if (coll.gameObject.tag == "Ground")
+        {
+            reelingIn = true;
+        }
         /*if (tag == "Shocker")
           {
               reelingIn = true;
