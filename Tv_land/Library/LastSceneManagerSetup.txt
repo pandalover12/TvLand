@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scene/Aroosh.unity
-  isLoaded: 1
-  isActive: 1
