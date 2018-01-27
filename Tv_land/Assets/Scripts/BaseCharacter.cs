@@ -26,10 +26,10 @@ public class BaseCharacter : MonoBehaviour
     protected Rigidbody2D rd;
 
     //Jump cooldown
-    [Header("Cooldown for jumping")]
-    [SerializeField]
-    protected float jumpCooldown = 1.6f;
-    protected float jumpVar = 0;
+    //[Header("Cooldown for jumping")]
+    //[SerializeField]
+    //protected float jumpCooldown = 1.6f;
+    //protected float jumpVar = 0;
 
     // Update is called once per frame
     private void FixedUpdate()
@@ -40,23 +40,23 @@ public class BaseCharacter : MonoBehaviour
     protected void Initialize()
     {
         rd = GetComponent<Rigidbody2D>();
-        jumpVar = jumpCooldown;
+        //jumpVar = jumpCooldown;
     }
 
     protected void Move()
     {
-        jumpCooldown -= Time.deltaTime;
+        //jumpCooldown -= Time.deltaTime;
         //Move right
         rd.velocity = new Vector2(input.x * maxSpeed *  1, rd.velocity.y);
 
         //Jump
-        if (Input.GetKey(KeyCode.W) && jumpCooldown <= 0)
+        if (Input.GetKey(KeyCode.Space) && Physics.Raycast(transform.position, Vector3.down, 1))
         {
             rd.AddForce(new Vector3(0, jumpUp, 0));
-            jumpCooldown = jumpVar;
+           // jumpCooldown = jumpVar;
         }
         //Todo: play crouch animation
-        if(Input.GetKey(KeyCode.S))
+        if(Input.GetKey(KeyCode.C))
         {
 
         }
