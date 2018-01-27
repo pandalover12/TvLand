@@ -11,9 +11,10 @@ public class BreakableObject : MonoBehaviour
         if(collision.gameObject.tag == "Hammer" && Input.GetKey(KeyCode.Mouse0))
         {
             GetComponent<Rigidbody>().AddForce(new Vector2(0, 100));
+            GetComponent<Rigidbody>().AddForce(new Vector2(200, 100));
 
 
-            GetComponent<Rigidbody>().AddExplosionForce(100, collision.transform.position, 1000);
+            //   GetComponent<Rigidbody>().AddExplosionForce(100, collision.transform.position, 1000);
         }
     }
 
