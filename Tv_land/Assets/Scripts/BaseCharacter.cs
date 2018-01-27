@@ -45,7 +45,7 @@ public class BaseCharacter : MonoBehaviour
     protected void Move()
     {
         
-        if(Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
+        if(Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.3f), Vector2.down, 0.1f))
         {
             onGround = true;
             //jumpUp = jumpVar;
