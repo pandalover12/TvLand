@@ -6,6 +6,8 @@ TagManager:
   tags:
   - pullAbleObject
   - Ground
+  tags:
+  - Hammer
   layers:
   - Default
   - TransparentFX
@@ -15,9 +17,9 @@ TagManager:
   - UI
   - 
   - 
-  - Grapple
-  - Player
   - Ground
+  - 
+  - 
   - 
   - 
   - 
