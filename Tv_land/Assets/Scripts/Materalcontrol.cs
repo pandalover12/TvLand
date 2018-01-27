@@ -19,63 +19,63 @@ public class Materalcontrol : MonoBehaviour {
 	void Update () {
         if (switchmat == 0) {
 
-            for (int i = 0; i < 10; ++i)
+            for (int i = 0; i < 4; ++i)
             {
                 ALWAYSTHESAMEbutnotsamemat[i].GetComponent<my3mats>().swtcher = 0;
             }
            for(int i =0; i < extraherostuff.Length; ++i)
             {
-                extraherostuff[i].SetActive(  true);
+        //        extraherostuff[i].SetActive(  true);
             }
             for (int i = 0; i < extrawesternstuff.Length; ++i)
             {
-                extrawesternstuff[i].SetActive(false);
+        //        extrawesternstuff[i].SetActive(false);
             }
             for (int i = 0; i < extrahamer.Length; ++i)
             {
-                extrahamer[i].SetActive(false);
+        //        extrahamer[i].SetActive(false);
             }
 
         }
    else     if (switchmat == 1)
         {
 
-            for (int i = 0; i < 10; ++i)
+            for (int i = 0; i < 4; ++i)
             {
                 ALWAYSTHESAMEbutnotsamemat[i].GetComponent<my3mats>().swtcher = 1;
             }
             for (int i = 0; i < extraherostuff.Length; ++i)
             {
-                extraherostuff[i].SetActive(false);
+       //         extraherostuff[i].SetActive(false);
             }
             for (int i = 0; i < extrawesternstuff.Length; ++i)
             {
-                extrawesternstuff[i].SetActive(true);
+       //         extrawesternstuff[i].SetActive(true);
             }
             for (int i = 0; i < extrahamer.Length; ++i)
             {
-                extrahamer[i].SetActive(false);
+       //         extrahamer[i].SetActive(false);
             }
 
         }
  else       if (switchmat == 2)
         {
 
-            for (int i = 0; i < 10; ++i)
+            for (int i = 0; i < 4; ++i)
             {
                 ALWAYSTHESAMEbutnotsamemat[i].GetComponent<my3mats>().swtcher = 2;
             }
             for (int i = 0; i < extraherostuff.Length; ++i)
             {
-                extraherostuff[i].SetActive(false);
+    //            extraherostuff[i].SetActive(false);
             }
             for (int i = 0; i < extrawesternstuff.Length; ++i)
             {
-                extrawesternstuff[i].SetActive(false);
+     //           extrawesternstuff[i].SetActive(false);
             }
             for (int i = 0; i < extrahamer.Length; ++i)
             {
-                extrahamer[i].SetActive(true);
+    //            extrahamer[i].SetActive(true);
             }
 
         }

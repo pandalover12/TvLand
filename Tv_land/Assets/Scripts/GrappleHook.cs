@@ -52,7 +52,7 @@ public class GrappleHook : MonoBehaviour {
 
     // is true and it never turns false
     [SerializeField]
-    private bool done = false;
+    public bool done = false;
     private bool cooldown = false;
     [HideInInspector]
     public bool reelingIn = false;
