@@ -5,8 +5,10 @@ using UnityEngine;
 public class BaseCharacter : MonoBehaviour
 {
     [Header("Speed the character moves with")]
+
     [SerializeField]
-    float moveSpeed = 10;
+    float maxSpeed;
+    Vector2 input;
 
     [Header("Distanc player slides on releasing key")]
     [SerializeField]
@@ -21,7 +23,7 @@ public class BaseCharacter : MonoBehaviour
     //float jumpDirection = 10;
 
     //Rigidbody of the component
-    protected Rigidbody rd;
+    protected Rigidbody2D rd;
 
     //Jump cooldown
     [Header("Cooldown for jumping")]
@@ -37,7 +39,7 @@ public class BaseCharacter : MonoBehaviour
 
     protected void Initialize()
     {
-        rd = GetComponent<Rigidbody>();
+        rd = GetComponent<Rigidbody2D>();
         jumpVar = jumpCooldown;
     }
 
@@ -45,20 +47,7 @@ public class BaseCharacter : MonoBehaviour
     {
         jumpCooldown -= Time.deltaTime;
         //Move right
-        if (Input.GetKey(KeyCode.D))
-        {
-            rd.AddForce(moveSpeed, 0, 0, ForceMode.Force);
-        }
-
-        //Move left
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * slideDistance * Time.deltaTime);
-        }
+        rd.velocity = new Vector2(input.x * maxSpeed *  1, rd.velocity.y);
 
         //Jump
         if (Input.GetKey(KeyCode.W) && jumpCooldown <= 0)
@@ -71,7 +60,9 @@ public class BaseCharacter : MonoBehaviour
         {
 
         }
-        
+        input.x = Input.GetAxis("Horizontal");
+        input.y = Input.GetAxis("Vertical");
+
     }
 
 }
