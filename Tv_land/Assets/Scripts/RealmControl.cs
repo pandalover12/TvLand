@@ -12,14 +12,20 @@ public class RealmControl : MonoBehaviour {
     [SerializeField]
     Materalcontrol mat;
     bool button = false;
+    float mouseWheelState = 0;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start ()
+    {
         superguys.enabled = true;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate ()
+    {
+        //mouseWheelState = Input.GetAxis("Mouse ScrollWheel");
+        //Debug.Log(mouseWheelState);
         if ((Input.GetKey(KeyCode.L))&& button==false) { 
             if (superguys.enabled == true)
             {
