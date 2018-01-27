@@ -40,7 +40,7 @@ public class WesternHero : BaseCharacter
          //   Debug.Break();
 
         }
-        if (Input.GetKey(KeyCode.Space)&&grappleScript.GetCurHook()!=null&& grappleScript.GetCurHook().GetComponent<GrappleHook>().done == true)
+        if (Input.GetKey(KeyCode.Space)&&grappleScript.GetCurHook()!=null&& grappleScript.GetCurHook().GetComponent<GrappleHook>().done == true&&onGround==false)
         {
             grappleScript.DestroyGrapple();
             rd.AddForce(new Vector2(0, jumpUp));
