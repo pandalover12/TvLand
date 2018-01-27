@@ -8,6 +8,10 @@ public class BaseCharacter : MonoBehaviour
     [SerializeField]
     float moveSpeed = 10;
 
+    [Header("Distanc player slides on releasing key")]
+    [SerializeField]
+    float slideDistance = 5;
+
     [Header("Amount of thrust player gets on jumping")]
     [SerializeField]
     float jumpUp = 400;
@@ -17,42 +21,47 @@ public class BaseCharacter : MonoBehaviour
     //float jumpDirection = 10;
 
     //Rigidbody of the component
-    Rigidbody rd;
+    protected Rigidbody rd;
 
     //Jump cooldown
     [Header("Cooldown for jumping")]
     [SerializeField]
-    float jumpCooldown = 1.6f;
-    float jumpVar = 0;
-
-	// Use this for initialization
-	void Start ()
-    {
-        rd = GetComponent<Rigidbody>();
-        jumpVar = jumpCooldown;
-	}
+    protected float jumpCooldown = 1.6f;
+    protected float jumpVar = 0;
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        jumpCooldown -= Time.deltaTime;
         Move();
     }
 
-    void Move()
+    protected void Initialize()
     {
+        rd = GetComponent<Rigidbody>();
+        jumpVar = jumpCooldown;
+    }
+
+    protected void Move()
+    {
+        jumpCooldown -= Time.deltaTime;
         //Move right
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            rd.AddForce(moveSpeed, 0, 0, ForceMode.Force);
         }
+
         //Move left
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
         }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            transform.Translate(Vector3.left * slideDistance * Time.deltaTime);
+        }
+
         //Jump
-        if(Input.GetKey(KeyCode.W) && jumpCooldown <= 0)
+        if (Input.GetKey(KeyCode.W) && jumpCooldown <= 0)
         {
             rd.AddForce(new Vector3(0, jumpUp, 0));
             jumpCooldown = jumpVar;
