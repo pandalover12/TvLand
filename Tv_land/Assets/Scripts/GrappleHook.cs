@@ -207,7 +207,7 @@ public class GrappleHook : MonoBehaviour {
         {
             return;
         }
-        Debug.Break();
+       
         /*if (tag == "Shocker")
           {
               reelingIn = true;
