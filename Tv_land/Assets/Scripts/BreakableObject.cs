@@ -5,13 +5,15 @@ using UnityEngine;
 public class BreakableObject : MonoBehaviour
 {
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
+    
         if(collision.gameObject.tag == "Hammer" && Input.GetKey(KeyCode.Mouse0))
         {
+            GetComponent<Rigidbody>().AddForce(new Vector2(0, 100));
 
-            
-            GetComponent<Rigidbody>().AddExplosionForce(1000, collision.transform.position, 1000);
+
+            GetComponent<Rigidbody>().AddExplosionForce(100, collision.transform.position, 1000);
         }
     }
 
