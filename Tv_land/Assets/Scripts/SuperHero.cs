@@ -20,6 +20,7 @@ public class SuperHero : BaseCharacter
 	
 	void FixedUpdate ()
     {
+        base.Move();
         if (superJumpUsed && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.2f))
             superJumpUsed = false;
         else if (!superJumpUsed && Input.GetMouseButtonDown(0))
@@ -28,7 +29,6 @@ public class SuperHero : BaseCharacter
 
     public void SuperJump()
     {
-        
         rd.AddForce(new Vector2(0, superJumpUp));
         superJumpUsed = true;
     }

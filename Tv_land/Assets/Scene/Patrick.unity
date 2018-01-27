@@ -218,7 +218,6 @@ GameObject:
   - component: {fileID: 434312150}
   - component: {fileID: 434312151}
   - component: {fileID: 434312149}
-  - component: {fileID: 434312154}
   - component: {fileID: 434312155}
   m_Layer: 0
   m_Name: Cube
@@ -326,20 +325,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &434312154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 434312148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3098664392c1f534fa2df20309d06079, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 10
-  slideDistance: 5
-  jumpUp: 800
 --- !u!114 &434312155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +495,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 743456531}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.4273, y: 0, z: 0}
   m_LocalScale: {x: 10.854639, y: 1, z: 2}
   m_Children: []
