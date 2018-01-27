@@ -40,11 +40,17 @@ public class WesternHero : BaseCharacter
          //   Debug.Break();
 
         }
-        if (Input.GetKey(KeyCode.Space)&&grappleScript.GetCurHook()!=null)
+        if (Input.GetKey(KeyCode.Space)&&grappleScript.GetCurHook()!=null&& grappleScript.GetCurHook().GetComponent<GrappleHook>().done == true)
         {
             grappleScript.DestroyGrapple();
+            rd.AddForce(new Vector2(0, jumpUp));
         }
             base.Move();
+        if (grappleScript.GetCurHook() == null && onGround == false)
+        {
+            rd.velocity = new Vector2(input.x * maxSpeed * 1, rd.velocity.y);
+        //    jumpUp = 100;
+        }
 
               if (grappleScript.GetCurHook() != null && grappleScript.GetCurHook().GetComponent<GrappleHook>().GetGrappleHookDone() && !grappleScript.GetCurHook().GetComponent<GrappleHook>().reelingIn && Mathf.Abs(input.x) > float.Epsilon&& onGround == false)
         {
@@ -84,4 +90,5 @@ public class WesternHero : BaseCharacter
             }
         }
     }
+
 }

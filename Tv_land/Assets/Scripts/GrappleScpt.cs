@@ -76,15 +76,15 @@ public class GrappleScpt : MonoBehaviour {
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S) && curHook != null && (curHook.transform.position - eyes.transform.position).sqrMagnitude <= noadMax)
-        {
-            realout = true;
-        }
-        if (Input.GetKeyUp(KeyCode.S) && curHook != null)
-        {
-            realout = false;
-
-        }
+  //      if (Input.GetKeyDown(KeyCode.S) && curHook != null && (curHook.transform.position - eyes.transform.position).sqrMagnitude <= noadMax)
+  //      {
+  //          realout = true;
+  //      }
+  //      if (Input.GetKeyUp(KeyCode.S) && curHook != null)
+  //      {
+  //          realout = false;
+  //
+  //      }
     }
     // SHOTS THE GRAPPLE HOOK
     public void StartGrapple()
