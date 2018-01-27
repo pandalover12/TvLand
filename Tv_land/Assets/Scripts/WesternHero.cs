@@ -3,17 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WesternHero : BaseCharacter {
+    [SerializeField]
+    GrappleScpt grappleScript;
+    [SerializeField]
+    float grappleControlMax = 10;
+    [SerializeField]
+    float grappleStartingControl = 0.2f;
+    [SerializeField]
+    float grappledControl = 0.5f;
+    float inAirSpeedMult = 0.5f;
+    bool ground = true; 
+    [SerializeField]
+    GameObject GrappleTarget;
+    [SerializeField]
+    GameObject cursorPos;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         base.Initialize();
 
     }
 	
 	// Update is called once per frame
-	void FixedUpdate() {    
+	    void FixedUpdate() {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 17;
+        cursorPos.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            Vector3 zeropo = cursorPos.transform.position;
+            zeropo.z = 0;
+            GrappleTarget.transform.position = zeropo;
+            grappleScript.StartGrapple();
+
+
+        }
         base.Move();
-         else if (grappleScript.GetCurHook() != null && grappleScript.GetCurHook().GetComponent<GrappleHook>().GetGrappleHookDone() && !grappleScript.GetCurHook().GetComponent<GrappleHook>().reelingIn && Mathf.Abs(input.x) > float.Epsilon)
+
+              if (grappleScript.GetCurHook() != null && grappleScript.GetCurHook().GetComponent<GrappleHook>().GetGrappleHookDone() && !grappleScript.GetCurHook().GetComponent<GrappleHook>().reelingIn && Mathf.Abs(input.x) > float.Epsilon&&ground==false)
         {
 
 
@@ -42,9 +70,9 @@ public class WesternHero : BaseCharacter {
         }
         else if (input.x != 0)
         {
-            RaycastHit2D wallHit = Physics2D.Raycast(transform.position, (Vector2.right * input.x).normalized, 0.5f, groundlayer);
+         //   RaycastHit2D wallHit = Physics2D.Raycast(transform.position, (Vector2.right * input.x).normalized, 0.5f, groundlayer);
             Debug.DrawRay(transform.position, (Vector2.right * input.x).normalized, Color.white, Time.deltaTime);
-            if (wallHit.collider == null && (Mathf.Sign(input.x) != Mathf.Sign(rd.velocity.x) || Mathf.Abs(rd.velocity.x) < maxSpeed))
+        //    if (wallHit.collider == null && (Mathf.Sign(input.x) != Mathf.Sign(rd.velocity.x) || Mathf.Abs(rd.velocity.x) < maxSpeed))
             {
                 rd.velocity += Vector2.right * input.x * inAirSpeedMult;
                 Debug.Log("Swing");
