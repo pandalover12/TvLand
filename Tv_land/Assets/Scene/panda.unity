@@ -536,9 +536,11 @@ MonoBehaviour:
   slideDistance: 5
   jumpUp: 400
   onGround: 0
+  rd: {fileID: 162734910}
   hammer: {fileID: 32704290}
   source: {fileID: 162734918}
   wal: {fileID: 8300000, guid: fd946e7488bc3564098453553b5111c4, type: 3}
+  hammersound: {fileID: 8300000, guid: c70b490deccecbc4e9e0254c1135d423, type: 3}
 --- !u!114 &162734905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +558,7 @@ MonoBehaviour:
   slideDistance: 5
   jumpUp: 400
   onGround: 0
+  rd: {fileID: 0}
   source: {fileID: 162734917}
   wal: {fileID: 8300000, guid: 43e8010f22174d14e8468b20122a2277, type: 3}
   doubljmp: {fileID: 8300000, guid: af7ef202726cdc74d8c2dd9bb3fcdc67, type: 3}
@@ -635,6 +638,7 @@ MonoBehaviour:
   slideDistance: 5
   jumpUp: 700
   onGround: 0
+  rd: {fileID: 0}
   source: {fileID: 162734917}
   lasossource: {fileID: 162734920}
   wal: {fileID: 8300000, guid: bb98c8f9819d70844869a5e1e71b548e, type: 3}
@@ -2141,7 +2145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &972752154
 GameObject:
@@ -2960,6 +2964,8 @@ MonoBehaviour:
   numParticles: 10
   explosionForce: 10
   explosionRange: 10
+  source: {fileID: 0}
+  destruct: {fileID: 0}
 --- !u!23 &1399552476
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3136,7 +3142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1506083186
 GameObject:
@@ -4626,103 +4632,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1393784719815476, guid: 271af0b4851a9b74f820f71eb95ce258,
     type: 2}
   m_PrefabInternal: {fileID: 1552609856}
---- !u!1 &1724748576
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1724748580}
-  - component: {fileID: 1724748579}
-  - component: {fileID: 1724748578}
-  - component: {fileID: 1724748577}
-  m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Life
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &1724748577
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1724748576}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!23 &1724748578
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1724748576}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1724748579
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1724748576}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1724748580
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1724748576}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.09, y: 1.9926742, z: -0.41364896}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1870531091
 GameObject:
   m_ObjectHideFlags: 0
