@@ -10,14 +10,15 @@ public class MidievalHero : BaseCharacter
 	// Use this for initialization
 	void Start ()
     {
-        base.Initialize();	
+        base.Initialize();
+        EnableHammer();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
 
-      //  base.Move();
+        base.Move();
         if(Input.GetKey(KeyCode.Mouse0))
         {
             //play hammer animation
@@ -26,11 +27,16 @@ public class MidievalHero : BaseCharacter
 	}
     public void EnableHammer()
     {
-    //    hammer.SetActive(true);
+        hammer.SetActive(true);
     }
     public void DsableHammer()
     {
-        //ammer.SetActive(false);
+        hammer.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        DsableHammer();
     }
 
 }
