@@ -21,6 +21,10 @@ public class BaseCharacter : MonoBehaviour
   protected  bool jump;
     [SerializeField]
     protected bool onGround = false;
+    [SerializeField]
+    AudioSource source2;
+    [SerializeField]
+    AudioClip jumpsound;
 
     [SerializeField]
    // GameObject raycastPos;
@@ -68,6 +72,10 @@ public class BaseCharacter : MonoBehaviour
         //Jump
         if (Input.GetKey(KeyCode.Space) && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
         {
+            if(source2.clip!=jumpsound)
+            source2.clip = jumpsound;
+            if(source2.isPlaying == false)
+            source2.Play();
             StartCoroutine(jumpCooldown());
             rd.velocity = Vector2.zero;
             jump = false;
