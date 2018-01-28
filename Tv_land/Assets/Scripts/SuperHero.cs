@@ -34,13 +34,7 @@ public class SuperHero : BaseCharacter
             superJumpUsed = false;
         else if (!superJumpUsed && Input.GetMouseButtonDown(0)&& !onGround&&jump)
             SuperJump();
-        if (Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
-        {
-           
-            onGround = true;
-            //jumpUp = jumpVar;
-         //   rd.velocity = new Vector2(input.x * maxSpeed * 1, rd.velocity.y);
-        }
+     
         if (onGround && input.x != 0)
         {
          //   Debug.Break();

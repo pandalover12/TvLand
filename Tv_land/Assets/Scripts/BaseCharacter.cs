@@ -23,7 +23,7 @@ public class BaseCharacter : MonoBehaviour
     protected bool onGround = false;
 
     [SerializeField]
-    GameObject raycastPos;
+   // GameObject raycastPos;
 
     //Rigidbody of the component
     protected Rigidbody2D rd;
@@ -48,11 +48,12 @@ public class BaseCharacter : MonoBehaviour
     protected void Move(bool velocityInAir = true)
     {
         
-        if(Physics2D.Raycast(raycastPos.transform.position/*new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f)*/, Vector2.down, 0.1f) && velocityInAir==false)
+        if(Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f) )
         {
           //  Debug.Break();
             onGround = true;
             //jumpUp = jumpVar;
+            if(velocityInAir==false)
             rd.velocity = new Vector2(input.x * maxSpeed * 1, rd.velocity.y);
         }
         else
