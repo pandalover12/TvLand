@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
 
     [SerializeField]
     GameObject deathScreen;
-
+    [SerializeField]
+    GameObject ButtonRestart;
     GameObject player;
 
     bool dead = false;
@@ -17,30 +19,31 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, deathDist);
+      
     }
 
     // Use this for initialization
     void Start ()
     {
-        Time.timeScale = 1;
-        deathScreen.SetActive(false);
-        player = GameObject.FindGameObjectWithTag("Player");
+  
+   deathScreen.SetActive(false);
+        ButtonRestart.SetActive(false);
+   player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
 
-        if (Vector3.Distance(transform.position, player.transform.position) < deathDist)
+        if ( player.transform.position.y <-10)
             dead = true;
-
-        if (dead)
-        {
-            Time.timeScale = 0;
-            deathScreen.SetActive(true);
-        }
+    
+   if (dead)
+   {
+       deathScreen.SetActive(true);
+            ButtonRestart.SetActive(true);
+     //  OnDrawGizmos();
+   }
 	}
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -59,6 +62,7 @@ public class PlayerDeath : MonoBehaviour
     public void Restart()
     {
         //TODO: reload current scene
+        SceneManager.LoadScene(1);
     }
 
     public void ToggleDead(bool b)

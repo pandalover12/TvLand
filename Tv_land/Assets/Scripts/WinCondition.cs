@@ -11,12 +11,16 @@ public class WinCondition : MonoBehaviour
     GameObject player;
 
     bool won = false;
+    [SerializeField]
+    GameObject WonText;
 
 	// Use this for initialization
 	void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        Time.timeScale = 1;
+        WonText.SetActive(false);
+
+    
 	}
 	
 	// Update is called once per frame
@@ -25,8 +29,13 @@ public class WinCondition : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) <= winDistance)
         {
             won = true;
-            Time.timeScale = 0;
+           
         }
+        if (won == true)
+        {
+            WonText.SetActive(true);
+        }
+
     }
 
     private void OnDrawGizmos()
