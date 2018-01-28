@@ -7,12 +7,14 @@ public class PlayerDeath : MonoBehaviour
 
     [SerializeField]
     GameObject deathScreen;
+
     bool dead = false;
 
 	// Use this for initialization
 	void Start ()
     {
-        Time.timeScale = 1;	
+        Time.timeScale = 1;
+        deathScreen.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -20,8 +22,8 @@ public class PlayerDeath : MonoBehaviour
     {
         if (dead)
         {
-
             Time.timeScale = 0;
+            deathScreen.SetActive(true);
         }
 	}
 
@@ -33,12 +35,22 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
-    public void toggleDead(bool b)
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void Restart()
+    {
+        //TODO: reload current scene
+    }
+
+    public void ToggleDead(bool b)
     {
         dead = b;
     }
 
-    public bool getDead()
+    public bool GetDead()
     {
         return dead;
     }
