@@ -7,6 +7,9 @@ TagManager:
   - pullAbleObject
   - Ground
   - Hammer
+  - Coin
+  - Drink
+  - Life
   layers:
   - Default
   - TransparentFX
