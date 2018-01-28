@@ -7,6 +7,7 @@ TagManager:
   - pullAbleObject
   - Ground
   - Hammer
+  - DestructionParticle
   layers:
   - Default
   - TransparentFX
