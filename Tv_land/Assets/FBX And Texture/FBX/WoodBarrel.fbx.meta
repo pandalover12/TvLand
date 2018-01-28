@@ -15,7 +15,12 @@ ModelImporter:
     3300000: Barrel
     4300000: Barrel
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 92a9ce4b92ef51f40a5881dfe532c277, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

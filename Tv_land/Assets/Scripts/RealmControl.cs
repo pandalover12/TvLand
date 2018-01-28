@@ -33,6 +33,9 @@ public class RealmControl : MonoBehaviour {
     Collectables collect;
     [SerializeField]
      SkinnedMeshRenderer cape;
+
+    [SerializeField]
+    GameObject Screen;
     enum Channel {Super, Western, Midieval};
 
 
