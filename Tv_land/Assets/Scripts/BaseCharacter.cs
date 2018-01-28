@@ -19,7 +19,7 @@ public class BaseCharacter : MonoBehaviour
     [SerializeField]
     protected float jumpUp = 800;
     protected float jumpVar = 1f;
-
+  protected  bool jump;
     protected bool onGround = false;
 
     //Rigidbody of the component
@@ -63,6 +63,9 @@ public class BaseCharacter : MonoBehaviour
         //Jump
         if (Input.GetKey(KeyCode.Space) && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
         {
+            StartCoroutine(jumpCooldown());
+            rd.velocity = Vector2.zero;
+            jump = false;
             rd.AddForce(new Vector2(0, jumpUp));
         }
 
@@ -75,6 +78,11 @@ public class BaseCharacter : MonoBehaviour
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
 
+    }
+    IEnumerator jumpCooldown()
+    {
+        yield return new WaitForSeconds(0.1f);
+        jump = true;
     }
 
 }
