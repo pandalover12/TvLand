@@ -29,6 +29,8 @@ public class RealmControl : MonoBehaviour {
     GameObject poses2s;
     [SerializeField]
     GameObject poss2;
+    [SerializeField]
+    Collectables collect;
     enum Channel {Super, Western, Midieval};
 
 
@@ -85,6 +87,7 @@ public class RealmControl : MonoBehaviour {
                 midievalHero.enabled = false;
                 musc.switcher = 1;
                 mat.switchmat = 1;
+                collect.switcher = 1;
                 break;
             case 2: //channel 2: Western Hero
                 poss2.SetActive(false);
@@ -100,6 +103,8 @@ public class RealmControl : MonoBehaviour {
                     midievalHero.DsableHammer();
                 }
                 midievalHero.enabled = false;
+                musc.switcher = 2;
+                collect.switcher = 2;
                 mat.switchmat = 2;
                 break;
             case 3: //channel 3: Midieval Hero
@@ -107,7 +112,6 @@ public class RealmControl : MonoBehaviour {
                 poses2s.SetActive(false);
                 POSES.SetActive(true);
                 midievalHero.enabled = true;
-                musc.switcher = 3;
                 knob.transform.rotation = Quaternion.Euler(new Vector3(0, 180, -65));
 
                 midievalHero.EnableHammer();
@@ -116,6 +120,8 @@ public class RealmControl : MonoBehaviour {
                     westernHero.destroy();
                 westernHero.enabled = false;
              //   Debug.Break();
+                musc.switcher = 3;
+                collect.switcher = 3;
                 mat.switchmat = 3;
                 break;
             default:

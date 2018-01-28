@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Collectables : MonoBehaviour
 {
@@ -13,13 +14,24 @@ public class Collectables : MonoBehaviour
     [SerializeField]
     AudioSource source;
     [SerializeField]
-    AudioClip cons;
+    AudioClip superCoin;
     [SerializeField]
-    AudioClip drn;
+    AudioClip westernCoin;
+    [SerializeField]
+    AudioClip midievalCoin;
+    [SerializeField]
+    AudioClip superDrink;
+    [SerializeField]
+    AudioClip westernDrink;
+    [SerializeField]
+    AudioClip midievalDrink;
     [SerializeField]
     AudioClip lfe;
-  
 
+    [SerializeField]
+    GameObject UiUpdate;
+  
+    public int switcher;
     void Start ()
     {
         coins = 0;
@@ -33,16 +45,29 @@ public class Collectables : MonoBehaviour
     {
         if (collision.gameObject.tag == "Coin")
         {
-            source.clip = cons;
+            if (switcher == 1)
+                source.clip = superCoin;
+            else if (switcher == 2)
+                source.clip = westernCoin;
+            else
+                source.clip = midievalCoin;
+
             source.Play();
             ++coins;
+            GameObject.Find("coinCount").GetComponent<Text>().text = coins.ToString();
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Drink")
         {
-            source.clip = drn;;
+            if (switcher == 1)
+                source.clip = superDrink;
+            else if (switcher == 2)
+                source.clip = westernDrink;
+            else
+                source.clip = midievalDrink;
             source.Play();
             ++drinks;
+            GameObject.Find("drinkCount").GetComponent<Text>().text = drinks.ToString();
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Life")
@@ -50,6 +75,7 @@ public class Collectables : MonoBehaviour
             source.clip = lfe;
             source.Play();
             ++extraLives;
+            GameObject.Find("lifeCount").GetComponent<Text>().text = extraLives.ToString();
             Destroy(collision.gameObject);
         }
     }

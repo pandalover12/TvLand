@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GGJCharacterSubstance_SuperHero_AlbedoTransparency
+  m_Name: GGJCharacterSubstance_Western_Normal
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _DETAIL_MULX2 _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 149535aa1b1639b4ab3f64409cfd2d29, type: 3}
+        m_Texture: {fileID: 2800000, guid: 750053f3800aaca46bf57047d12e50db, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -39,11 +39,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2919103915b1ece4db185a53256a059b, type: 3}
+        m_Texture: {fileID: 2800000, guid: c27845a4aecacb04a9a779b6e47674a0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: d0be69147384aa543ba022f486b13f67, type: 3}
+        m_Texture: {fileID: 2800000, guid: 36d34f467144ea543a9b043408dbba24, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
