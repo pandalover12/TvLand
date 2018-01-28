@@ -15,6 +15,8 @@ public class RealmControl : MonoBehaviour {
     float mouseWheelState = 0;
     [SerializeField]
     int channelNo = 2;
+    [SerializeField]
+    musicControler music;
     enum Channel {Super, Western, Midieval};
 
 
@@ -85,6 +87,7 @@ public class RealmControl : MonoBehaviour {
                 
             case 1: //channel 1: Super Hero
                 superHero.enabled = true;
+                music.switcher = 1;
                 if(westernHero.enabled==true)
                 westernHero.destroy();
                 westernHero.enabled = false;
@@ -98,6 +101,7 @@ public class RealmControl : MonoBehaviour {
                 break;
             case 2: //channel 2: Western Hero
                 westernHero.enabled = true;
+                music.switcher = 2;
                 superHero.enabled = false;
                 if (midievalHero.enabled == true)
                 {
@@ -107,6 +111,7 @@ public class RealmControl : MonoBehaviour {
                 mat.switchmat = 2;
                 break;
             case 3: //channel 3: Midieval Hero
+                music.switcher = 3;
                 midievalHero.enabled = true;
                 midievalHero.EnableHammer();
                 superHero.enabled = false;
