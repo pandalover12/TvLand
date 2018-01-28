@@ -2059,7 +2059,14 @@ MonoBehaviour:
   input: {x: 0, y: 0}
   slideDistance: 5
   jumpUp: 1600
+  onGround: 0
+  source2: {fileID: 0}
+  jumpsound: {fileID: 8300000, guid: 54bc8e71d92758c438581d33ebc7b8c2, type: 3}
+  rd: {fileID: 50952247882570926}
   hammer: {fileID: 1317473024939948}
+  source: {fileID: 0}
+  wal: {fileID: 8300000, guid: fd946e7488bc3564098453553b5111c4, type: 3}
+  hammersound: {fileID: 8300000, guid: c70b490deccecbc4e9e0254c1135d423, type: 3}
 --- !u!114 &114130822353562122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2088,12 +2095,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf2797e850acb24a99c1c445aac9960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  swap: {fileID: 8300000, guid: e0dfe857cd98ced498878e0d57725ea1, type: 3}
   westernHero: {fileID: 114389023668632258}
   midievalHero: {fileID: 114097291056874172}
   superHero: {fileID: 114385948328627556}
   mat: {fileID: 114130822353562122}
   channelNo: 2
   knob: {fileID: 0}
+  musc: {fileID: 0}
 --- !u!114 &114385948328627556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2109,6 +2119,14 @@ MonoBehaviour:
   input: {x: 0, y: 0}
   slideDistance: 5
   jumpUp: 1600
+  onGround: 0
+  source2: {fileID: 0}
+  jumpsound: {fileID: 8300000, guid: 54bc8e71d92758c438581d33ebc7b8c2, type: 3}
+  rd: {fileID: 50952247882570926}
+  source: {fileID: 0}
+  wal: {fileID: 8300000, guid: 43e8010f22174d14e8468b20122a2277, type: 3}
+  doubljmp: {fileID: 8300000, guid: 5de4fa89e07c62e43ac88f39e7fce1cb, type: 3}
+  doublejumpsound: {fileID: 0}
   superJumpMultiplier: 1.2
 --- !u!114 &114389023668632258
 MonoBehaviour:
@@ -2125,10 +2143,18 @@ MonoBehaviour:
   input: {x: 0, y: 0}
   slideDistance: 5
   jumpUp: 1600
+  onGround: 0
+  source2: {fileID: 0}
+  jumpsound: {fileID: 8300000, guid: 54bc8e71d92758c438581d33ebc7b8c2, type: 3}
+  rd: {fileID: 0}
+  source: {fileID: 0}
+  lasossource: {fileID: 0}
+  wal: {fileID: 8300000, guid: 0a1400b299cab764396d59725307c84d, type: 3}
   grappleScript: {fileID: 114485989333410342}
   grappleControlMax: 10
   grappleStartingControl: 0.2
   grappledControl: 0.09
+  laso: {fileID: 8300000, guid: bb3d11fce05fa6d44b76df6febed771a, type: 3}
   GrappleTarget: {fileID: 0}
   cursorPos: {fileID: 0}
 --- !u!114 &114467772894667818
