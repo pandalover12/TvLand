@@ -410,6 +410,6 @@ MonoBehaviour:
   grappleTarget: {fileID: 0}
   eyes: {fileID: 1492722561796888}
   realout: 0
-  maxDistance: 2
+  maxDistance: 2.5
   speed: 0.8
   noadMax: 10
