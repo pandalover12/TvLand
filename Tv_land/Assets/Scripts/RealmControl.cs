@@ -23,6 +23,12 @@ public class RealmControl : MonoBehaviour {
     GameObject knob;
     [SerializeField]
     musicControler musc;
+    [SerializeField]
+    GameObject POSES;
+    [SerializeField]
+    GameObject poses2s;
+    [SerializeField]
+    GameObject poss2;
     enum Channel {Super, Western, Midieval};
 
 
@@ -64,6 +70,9 @@ public class RealmControl : MonoBehaviour {
         {
                 
             case 1: //channel 1: Super Hero
+                poss2.SetActive(true);
+                poses2s.SetActive(false);
+                POSES.SetActive(false);
                 superHero.enabled = true;
                 knob.transform.rotation = Quaternion.Euler(new Vector3(0, 180, -25));
                 if (westernHero.enabled==true)
@@ -78,6 +87,9 @@ public class RealmControl : MonoBehaviour {
                 mat.switchmat = 1;
                 break;
             case 2: //channel 2: Western Hero
+                poss2.SetActive(false);
+                poses2s.SetActive(true);
+                POSES.SetActive(false);
                 musc.switcher = 2;
                 westernHero.enabled = true;
                 knob.transform.rotation = Quaternion.Euler(new Vector3(0, 180, -45));
@@ -91,6 +103,9 @@ public class RealmControl : MonoBehaviour {
                 mat.switchmat = 2;
                 break;
             case 3: //channel 3: Midieval Hero
+                poss2.SetActive(false);
+                poses2s.SetActive(false);
+                POSES.SetActive(true);
                 midievalHero.enabled = true;
                 musc.switcher = 3;
                 knob.transform.rotation = Quaternion.Euler(new Vector3(0, 180, -65));

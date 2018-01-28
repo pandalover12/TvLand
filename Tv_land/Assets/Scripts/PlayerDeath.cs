@@ -24,23 +24,24 @@ public class PlayerDeath : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        Time.timeScale = 1;
-        deathScreen.SetActive(false);
-        player = GameObject.FindGameObjectWithTag("Player");
+    //   Time.timeScale = 1;
+    //   deathScreen.SetActive(false);
+    //   player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
 
-        if (Vector3.Distance(transform.position, player.transform.position) < deathDist)
+    //    if ( player.transform.position.y)
             dead = true;
-
-        if (dead)
-        {
-            Time.timeScale = 0;
-            deathScreen.SetActive(true);
-        }
+    //
+    //   if (dead)
+    //   {
+    //       Time.timeScale = 0;
+    //       deathScreen.SetActive(true);
+    //       OnDrawGizmos();
+    //   }
 	}
 
     private void OnCollisionStay2D(Collision2D collision)
