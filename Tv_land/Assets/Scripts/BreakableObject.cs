@@ -69,7 +69,7 @@ public class BreakableObject : MonoBehaviour
 
             Destroy(gameObject);
 
-          //  GetComponent<Rigidbody>().AddExplosionForce(100, collision.transform.position, 1000);
+            GetComponent<Rigidbody>().AddExplosionForce(100, collision.transform.position, 1000);
         }
 
     }

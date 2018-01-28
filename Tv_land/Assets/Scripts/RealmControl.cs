@@ -25,7 +25,7 @@ public class RealmControl : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        superHero.enabled = true;
+        ChangeChannel(2);
 	}
 
     // Update is called once per frame
