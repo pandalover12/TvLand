@@ -17,6 +17,8 @@ public class RealmControl : MonoBehaviour {
     int channelNo = 2;
     [SerializeField]
     GameObject knob;
+    [SerializeField]
+    musicControler musc;
     enum Channel {Super, Western, Midieval};
 
 
@@ -62,10 +64,11 @@ public class RealmControl : MonoBehaviour {
                     midievalHero.DsableHammer();
                 }
                 midievalHero.enabled = false;
-
+                musc.switcher = 1;
                 mat.switchmat = 1;
                 break;
             case 2: //channel 2: Western Hero
+                musc.switcher = 2;
                 westernHero.enabled = true;
                 knob.transform.rotation = Quaternion.Euler(new Vector3(0, 180, -45));
 
@@ -79,6 +82,7 @@ public class RealmControl : MonoBehaviour {
                 break;
             case 3: //channel 3: Midieval Hero
                 midievalHero.enabled = true;
+                musc.switcher = 3;
                 knob.transform.rotation = Quaternion.Euler(new Vector3(0, 180, -65));
 
                 midievalHero.EnableHammer();
