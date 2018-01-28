@@ -24,7 +24,7 @@ public class MidievalHero : BaseCharacter
 	void Update ()
     {
 
-        base.Move();
+     //   base.Move();
         if(Input.GetKey(KeyCode.Mouse0))
         {
             //play hammer animation
