@@ -38,7 +38,10 @@ public class hodey : MonoBehaviour
         }
         if (clothMod.externalAcceleration == NegativeWindForce)
         {
+            MaxWindForce = new Vector3(Random.Range(-100, -90), 30, -40);
+            NegativeWindForce = new Vector3(Random.Range(0, 10), -30, 0);
             TargetWindForce = MaxWindForce;
+
         
         }
     }
