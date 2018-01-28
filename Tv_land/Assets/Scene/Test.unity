@@ -13521,6 +13521,7 @@ MonoBehaviour:
   channelNo: 2
   knob: {fileID: 1721748609}
   musc: {fileID: 393274074}
+  collect: {fileID: 686272207}
 --- !u!114 &686272198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13782,7 +13783,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 686272192}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaf081460097b8c409eb5669f2483bc9, type: 3}
   m_Name: 
@@ -13791,9 +13792,15 @@ MonoBehaviour:
   drinks: 0
   extraLives: 0
   source: {fileID: 686272206}
-  cons: {fileID: 0}
-  drn: {fileID: 0}
-  lfe: {fileID: 0}
+  superCoin: {fileID: 8300000, guid: 3d32d1e17688dad428f744c195e7d08e, type: 3}
+  westernCoin: {fileID: 8300000, guid: dff49644c736c424eb47c2e0bdfea614, type: 3}
+  midievalCoin: {fileID: 8300000, guid: 006a4df21e6ecf94da82e1a1ed2dcf9b, type: 3}
+  superDrink: {fileID: 8300000, guid: f16a20bcf5b044d45ba2cd24c9b5de61, type: 3}
+  westernDrink: {fileID: 8300000, guid: ed3dabe9aa9ee3e4a90d7214c76cfd4b, type: 3}
+  midievalDrink: {fileID: 8300000, guid: 545113754b926724ba4f74c65772e30e, type: 3}
+  lfe: {fileID: 8300000, guid: abfbc225758f22640b1512d841f50551, type: 3}
+  UiUpdate: {fileID: 1207910493}
+  switcher: 0
 --- !u!1001 &687916214
 Prefab:
   m_ObjectHideFlags: 0
@@ -23644,6 +23651,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a58d79638bc38f478e428006c5ecf8c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1207910493 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1301342029128008, guid: 8a58d79638bc38f478e428006c5ecf8c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1207910492}
 --- !u!1001 &1209622282
 Prefab:
   m_ObjectHideFlags: 0
