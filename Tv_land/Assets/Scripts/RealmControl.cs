@@ -31,6 +31,9 @@ public class RealmControl : MonoBehaviour {
     GameObject poss2;
     [SerializeField]
     Collectables collect;
+
+    [SerializeField]
+    GameObject Screen;
     enum Channel {Super, Western, Midieval};
 
 
