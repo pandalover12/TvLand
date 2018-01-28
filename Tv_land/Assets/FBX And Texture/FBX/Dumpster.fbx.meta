@@ -15,7 +15,12 @@ ModelImporter:
     3300000: Dumpster
     4300000: Dumpster
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 8d02ad9a8fc4dc641ad169f1e6f676db, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

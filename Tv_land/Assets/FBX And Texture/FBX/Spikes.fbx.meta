@@ -15,7 +15,12 @@ ModelImporter:
     3300000: Spikes
     4300000: Spikes
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: c8ff28d67e20c3d418241014f1b8967d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
