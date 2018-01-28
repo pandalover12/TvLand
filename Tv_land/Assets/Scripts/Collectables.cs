@@ -10,7 +10,14 @@ public class Collectables : MonoBehaviour
     uint drinks;
     [SerializeField]
     uint extraLives;
-
+    [SerializeField]
+    AudioSource source;
+    [SerializeField]
+    AudioClip cons;
+    [SerializeField]
+    AudioClip drn;
+    [SerializeField]
+    AudioClip lfe;
   
 
     void Start ()
@@ -26,16 +33,22 @@ public class Collectables : MonoBehaviour
     {
         if (collision.gameObject.tag == "Coin")
         {
+            source.clip = cons;
+            source.Play();
             ++coins;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Drink")
         {
+            source.clip = drn;;
+            source.Play();
             ++drinks;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Life")
         {
+            source.clip = lfe;
+            source.Play();
             ++extraLives;
             Destroy(collision.gameObject);
         }

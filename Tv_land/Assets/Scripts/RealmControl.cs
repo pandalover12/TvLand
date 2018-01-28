@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class RealmControl : MonoBehaviour {
     [SerializeField]
+    AudioSource source;
+    [SerializeField]
+    AudioClip swap;
+    [SerializeField]
     WesternHero westernHero;
     [SerializeField]
     MidievalHero midievalHero;
@@ -50,6 +54,12 @@ public class RealmControl : MonoBehaviour {
 
     public void ChangeChannel(int num)
     {
+        if(source.clip!=swap)
+        source.clip = swap;
+        if (source.isPlaying == false)
+        {
+            source.Play();
+        }
         switch (num)
         {
                 

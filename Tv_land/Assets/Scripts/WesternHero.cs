@@ -5,6 +5,12 @@ using UnityEngine;
 public class WesternHero : BaseCharacter
 {
     [SerializeField]
+    AudioSource source;
+    [SerializeField]
+    AudioSource lasossource;
+    [SerializeField]
+    AudioClip wal;
+    [SerializeField]
     GrappleScpt grappleScript;
     [SerializeField]
     float grappleControlMax = 10;
@@ -13,6 +19,8 @@ public class WesternHero : BaseCharacter
     [SerializeField]
     float grappledControl = 0.5f;
     float inAirSpeedMult = 0.5f;
+    [SerializeField]
+    AudioClip laso;
   
     [SerializeField]
     GameObject GrappleTarget;
@@ -27,11 +35,22 @@ public class WesternHero : BaseCharacter
 	
 	// Update is called once per frame
 	    void FixedUpdate() {
+        if(onGround&& input.x != 0)
+        {
+            if(source.clip!=wal)
+            source.clip = wal;
+            if(source.isPlaying==false)
+            source.Play();
+        }
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 17;
         cursorPos.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
         if (Input.GetMouseButtonDown(0))
         {
+            if (lasossource.clip != laso)
+                lasossource.clip = laso;
+            if (source.isPlaying == false)
+                lasossource.Play();
 
             Vector3 zeropo = cursorPos.transform.position;
             zeropo.z = 0;

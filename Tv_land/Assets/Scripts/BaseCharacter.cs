@@ -19,6 +19,7 @@ public class BaseCharacter : MonoBehaviour
     protected float jumpUp = 800;
     protected float jumpVar = 1f;
   protected  bool jump;
+    [SerializeField]
     protected bool onGround = false;
 
     [SerializeField]
@@ -49,6 +50,7 @@ public class BaseCharacter : MonoBehaviour
         
         if(Physics2D.Raycast(raycastPos.transform.position/*new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f)*/, Vector2.down, 0.1f) && velocityInAir==false)
         {
+          //  Debug.Break();
             onGround = true;
             //jumpUp = jumpVar;
             rd.velocity = new Vector2(input.x * maxSpeed * 1, rd.velocity.y);
