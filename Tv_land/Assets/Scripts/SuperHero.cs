@@ -29,6 +29,9 @@ public class SuperHero : BaseCharacter
 
     public void SuperJump()
     {
+        //rd.AddForce(new Vector2(0, 0));
+        rd.velocity = Vector2.zero;
+
         rd.AddForce(new Vector2(0, superJumpUp));
         superJumpUsed = true;
     }
