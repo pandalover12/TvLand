@@ -17,7 +17,7 @@ public class MidievalHero : BaseCharacter
 	void Update ()
     {
 
-        base.Move();
+      //  base.Move();
         if(Input.GetKey(KeyCode.Mouse0))
         {
             //play hammer animation
@@ -26,11 +26,11 @@ public class MidievalHero : BaseCharacter
 	}
     public void EnableHammer()
     {
-        hammer.SetActive(true);
+    //    hammer.SetActive(true);
     }
     public void DsableHammer()
     {
-        hammer.SetActive(false);
+        //ammer.SetActive(false);
     }
 
 }
