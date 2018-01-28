@@ -306,6 +306,7 @@ public class GrappleHook : MonoBehaviour {
 
 
     }
+
     public void CreateNode1()
     {
         // puting the rope in last node in front of the players
