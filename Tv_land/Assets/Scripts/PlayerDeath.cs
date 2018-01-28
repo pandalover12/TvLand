@@ -8,18 +8,34 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField]
     GameObject deathScreen;
 
+    GameObject player;
+
     bool dead = false;
 
-	// Use this for initialization
-	void Start ()
+    [SerializeField]
+    float deathDist = 10;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, deathDist);
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         Time.timeScale = 1;
         deathScreen.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+
+        if (Vector3.Distance(transform.position, player.transform.position) < deathDist)
+            dead = true;
+
         if (dead)
         {
             Time.timeScale = 0;
