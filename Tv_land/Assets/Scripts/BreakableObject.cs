@@ -14,7 +14,10 @@ public class BreakableObject : MonoBehaviour
     float explosionForce = 10;
     [SerializeField]
     float explosionRange = 10;
-
+    [SerializeField]
+    AudioSource source;
+    [SerializeField]
+    AudioClip destruct;
     List<GameObject> particles;
 
     private void Start()
@@ -56,6 +59,10 @@ public class BreakableObject : MonoBehaviour
     
         if(collision.gameObject.tag == "Hammer" && Input.GetKey(KeyCode.Mouse0))
         {
+            if(source.clip!=destruct)
+            source.clip = destruct;
+            if(source.isPlaying==false)
+            source.Play();
 
             for (int i = 0; i < numParticles; i++)
             {
@@ -67,11 +74,18 @@ public class BreakableObject : MonoBehaviour
                 Destroy(particles[i], 2f);
             }
 
-            Destroy(gameObject);
-
+            //  Destroy(gameObject);
+            this.GetComponent<MeshRenderer>().enabled = false;
+            this.GetComponent<SphereCollider>().enabled = false;
+            StartCoroutine(DontDesory());
             GetComponent<Rigidbody>().AddExplosionForce(100, collision.transform.position, 1000);
         }
 
+    }
+    IEnumerator DontDesory()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
 }

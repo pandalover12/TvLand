@@ -10,6 +10,8 @@ public class MidievalHero : BaseCharacter
     AudioSource source;
     [SerializeField]
     AudioClip wal;
+    [SerializeField]
+    AudioClip hammersound;
 
     // Use this for initialization
     void Start ()
@@ -26,14 +28,12 @@ public class MidievalHero : BaseCharacter
         if(Input.GetKey(KeyCode.Mouse0))
         {
             //play hammer animation
+            if (source.clip != hammersound)
+                source.clip = hammersound;
+            if (source.isPlaying == false)
+                source.Play();
         }
-        if (Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f))
-        {
-            //  Debug.Break();
-            onGround = true;
-            //jumpUp = jumpVar;
-         //   rd.velocity = new Vector2(input.x * maxSpeed * 1, rd.velocity.y);
-        }
+  
         if (onGround && input.x != 0)
         {
             if (source.clip != wal)
