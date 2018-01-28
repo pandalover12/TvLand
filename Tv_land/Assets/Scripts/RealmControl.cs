@@ -16,6 +16,8 @@ public class RealmControl : MonoBehaviour {
     [SerializeField]
     int channelNo = 2;
     [SerializeField]
+    GameObject knob;
+    [SerializeField]
     musicControler music;
     enum Channel {Super, Western, Midieval};
 
@@ -25,9 +27,9 @@ public class RealmControl : MonoBehaviour {
     {
         superHero.enabled = true;
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+
+    // Update is called once per frame
+    void FixedUpdate()
     {
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
@@ -44,41 +46,7 @@ public class RealmControl : MonoBehaviour {
                 ChangeChannel(channelNo -= 2);
         }
 
-
-    //    if ((Input.GetKey(KeyCode.L)) && button == false)
-    //    {
-    //        if (superHero.enabled == true)
-    //        {
-
-    //            mat.switchmat = 1;
-    //            superHero.enabled = false;
-    //            westernHero.enabled = true;
-    //        }
-    //        else if (westernHero.enabled == true)
-    //        {
-
-    //            mat.switchmat = 2;
-    //            westernHero.enabled = false;
-    //            midievalHero.enabled = true;
-    //        }
-
-    //        else
-    //        {
-
-    //            mat.switchmat = 0;
-    //            midievalHero.enabled = false;
-    //            superHero.enabled = true;
-    //        }
-    //        button = true;
-    //        StartCoroutine(buttonbounce());
-    //    }
-
     }
-    //IEnumerator buttonbounce()
-    //{
-    //    yield return new WaitForSeconds(0.4f);
-    //    button = false;
-    //}
 
     public void ChangeChannel(int num)
     {
@@ -89,6 +57,8 @@ public class RealmControl : MonoBehaviour {
                 superHero.enabled = true;
                 music.switcher = 1;
                 if(westernHero.enabled==true)
+                knob.transform.rotation = Quaternion.EulerRotation(new Vector3(1, 1, 1));
+                if (westernHero.enabled==true)
                 westernHero.destroy();
                 westernHero.enabled = false;
                 if (midievalHero.enabled == true)
@@ -102,6 +72,8 @@ public class RealmControl : MonoBehaviour {
             case 2: //channel 2: Western Hero
                 westernHero.enabled = true;
                 music.switcher = 2;
+                knob.transform.rotation = Quaternion.EulerRotation(new Vector3(1, 1, 1));
+
                 superHero.enabled = false;
                 if (midievalHero.enabled == true)
                 {
@@ -113,6 +85,8 @@ public class RealmControl : MonoBehaviour {
             case 3: //channel 3: Midieval Hero
                 music.switcher = 3;
                 midievalHero.enabled = true;
+                knob.transform.rotation = Quaternion.EulerRotation(new Vector3(1, 1, 1));
+
                 midievalHero.EnableHammer();
                 superHero.enabled = false;
                 if (westernHero.enabled == true)

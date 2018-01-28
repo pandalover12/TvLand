@@ -4,32 +4,40 @@ using UnityEngine;
 
 public class Collectables : MonoBehaviour
 {
-    public static uint superCoins;
-    public static uint westernCoins;
-    public static uint midievalCoins;
-
-    public static uint superDrinks;
-    public static uint westernDrinks;
-    public static uint midievalDrinks;
-
     [SerializeField]
-    BaseCharacter character;
+    uint coins;
+    [SerializeField]
+    uint drinks;
+    [SerializeField]
+    uint extraLives;
+
+  
 
     void Start ()
     {
-        superCoins = 0;
-        westernCoins = 0;
-        midievalCoins = 0;
-
-        superDrinks = 0;
-        westernDrinks = 0;
-        midievalDrinks = 0;
+        coins = 0;
+        drinks = 0;
+        extraLives = 0;
     }
-	
 
-	void FixedUpdate ()
+    
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-		
-
-	}
+        if (collision.gameObject.tag == "Coin")
+        {
+            ++coins;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Drink")
+        {
+            ++drinks;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Life")
+        {
+            ++extraLives;
+            Destroy(collision.gameObject);
+        }
+    }
 }
