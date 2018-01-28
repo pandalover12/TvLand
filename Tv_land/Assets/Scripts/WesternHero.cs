@@ -61,8 +61,13 @@ public class WesternHero : BaseCharacter
         }
         if (Input.GetKey(KeyCode.Space)&&grappleScript.GetCurHook()!=null&& grappleScript.GetCurHook().GetComponent<GrappleHook>().done == true&&onGround==false)
         {
+           ///.. Debug.Break();
             grappleScript.DestroyGrapple();
             rd.AddForce(new Vector2(0, jumpUp));
+        }
+        else if(Input.GetKey(KeyCode.Space) && grappleScript.GetCurHook() != null && grappleScript.GetCurHook().GetComponent<GrappleHook>().done == true && onGround == true)
+        {
+            grappleScript.DestroyGrapple();
         }
             base.Move(false);
         if (grappleScript.GetCurHook() == null && onGround == false)
