@@ -1,0 +1,254 @@
+fileFormatVersion: 2
+guid: d21d9cdc14962da4f88c99dcf4af7dbb
+timeCreated: 1517140266
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Body_Low
+    100002: Character
+    100004: CowboyHat
+    100006: ct_back_01_bind
+    100008: ct_back_02_bind
+    100010: ct_back_03_bind
+    100012: ct_back_04_waste
+    100014: ct_cog_icon
+    100016: ct_coret_icon
+    100018: ct_head_01_bind
+    100020: ct_head_02_waste
+    100022: ct_head_03_waste
+    100024: ct_head_icon
+    100026: ct_middle_icon
+    100028: //RootNode
+    100030: Head
+    100032: Helmet
+    100034: ikHandle1
+    100036: joints
+    100038: LArm_Low
+    100040: Leye
+    100042: LLeg_Low
+    100044: lt_arm_01_bind
+    100046: lt_arm_02_bind
+    100048: lt_arm_03_waste
+    100050: lt_clav_01_bind
+    100052: lt_clav_02_waste
+    100054: lt_elbow_icon
+    100056: lt_foot_01_bind
+    100058: lt_foot_02_waste
+    100060: lt_foot_icon
+    100062: lt_hand_00_pad
+    100064: lt_hand_01_bind
+    100066: lt_hand_02_waste
+    100068: lt_hand_icon
+    100070: Mask
+    100072: RArm_Low
+    100074: REye
+    100076: RLeg_Low
+    100078: Root
+    100080: rt_arm_01_bind
+    100082: rt_arm_02_bind
+    100084: rt_arm_03_waste
+    100086: rt_clav_01_bind
+    100088: rt_clav_02_waste
+    100090: rt_elbow_icon
+    100092: rt_foot_01_bind
+    100094: rt_foot_02_waste
+    100096: rt_foot_icon
+    100098: rt_hand_01_bind
+    100100: rt_hand_02_waste
+    100102: rt_hand_icon
+    100104: rt_hand_ik
+    400000: Body_Low
+    400002: Character
+    400004: CowboyHat
+    400006: ct_back_01_bind
+    400008: ct_back_02_bind
+    400010: ct_back_03_bind
+    400012: ct_back_04_waste
+    400014: ct_cog_icon
+    400016: ct_coret_icon
+    400018: ct_head_01_bind
+    400020: ct_head_02_waste
+    400022: ct_head_03_waste
+    400024: ct_head_icon
+    400026: ct_middle_icon
+    400028: //RootNode
+    400030: Head
+    400032: Helmet
+    400034: ikHandle1
+    400036: joints
+    400038: LArm_Low
+    400040: Leye
+    400042: LLeg_Low
+    400044: lt_arm_01_bind
+    400046: lt_arm_02_bind
+    400048: lt_arm_03_waste
+    400050: lt_clav_01_bind
+    400052: lt_clav_02_waste
+    400054: lt_elbow_icon
+    400056: lt_foot_01_bind
+    400058: lt_foot_02_waste
+    400060: lt_foot_icon
+    400062: lt_hand_00_pad
+    400064: lt_hand_01_bind
+    400066: lt_hand_02_waste
+    400068: lt_hand_icon
+    400070: Mask
+    400072: RArm_Low
+    400074: REye
+    400076: RLeg_Low
+    400078: Root
+    400080: rt_arm_01_bind
+    400082: rt_arm_02_bind
+    400084: rt_arm_03_waste
+    400086: rt_clav_01_bind
+    400088: rt_clav_02_waste
+    400090: rt_elbow_icon
+    400092: rt_foot_01_bind
+    400094: rt_foot_02_waste
+    400096: rt_foot_icon
+    400098: rt_hand_01_bind
+    400100: rt_hand_02_waste
+    400102: rt_hand_icon
+    400104: rt_hand_ik
+    2100000: lambert3
+    2100002: lambert2
+    2300000: CowboyHat
+    2300002: Helmet
+    2300004: Mask
+    3300000: CowboyHat
+    3300002: Helmet
+    3300004: Mask
+    4300000: Body_Low
+    4300002: LArm_Low
+    4300004: Mask
+    4300006: Helmet
+    4300008: CowboyHat
+    4300010: RLeg_Low
+    4300012: RArm_Low
+    4300014: Leye
+    4300016: REye
+    4300018: LLeg_Low
+    4300020: Head
+    6400000: CowboyHat
+    6400002: Helmet
+    6400004: Mask
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Body_Low
+    13700002: Head
+    13700004: LArm_Low
+    13700006: Leye
+    13700008: LLeg_Low
+    13700010: RArm_Low
+    13700012: REye
+    13700014: RLeg_Low
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

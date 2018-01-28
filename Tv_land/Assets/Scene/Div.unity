@@ -13017,6 +13017,11 @@ Prefab:
       propertyPath: cursorPos
       value: 
       objectReference: {fileID: 444010306}
+    - target: {fileID: 114239847520576442, guid: 81766ebbbef29e6478f416cbdf01d361,
+        type: 2}
+      propertyPath: knob
+      value: 
+      objectReference: {fileID: 2114831505}
     - target: {fileID: 114485989333410342, guid: 81766ebbbef29e6478f416cbdf01d361,
         type: 2}
       propertyPath: grappleTarget
@@ -13026,11 +13031,6 @@ Prefab:
       propertyPath: m_Name
       value: PlayerPrefab 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114239847520576442, guid: 81766ebbbef29e6478f416cbdf01d361,
-        type: 2}
-      propertyPath: knob
-      value: 
-      objectReference: {fileID: 2114831505}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81766ebbbef29e6478f416cbdf01d361, type: 2}
   m_IsPrefabParent: 0

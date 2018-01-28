@@ -5,7 +5,6 @@ using UnityEngine;
 public class BaseCharacter : MonoBehaviour
 {
     [Header("Speed the character moves with")]
-
     [SerializeField]
     protected float maxSpeed = 5;
     [SerializeField]
@@ -21,6 +20,9 @@ public class BaseCharacter : MonoBehaviour
     protected float jumpVar = 1f;
   protected  bool jump;
     protected bool onGround = false;
+
+    [SerializeField]
+    GameObject raycastPos;
 
     //Rigidbody of the component
     protected Rigidbody2D rd;
@@ -45,7 +47,7 @@ public class BaseCharacter : MonoBehaviour
     protected void Move(bool velocityInAir = true)
     {
         
-        if(Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f), Vector2.down, 0.1f)&&velocityInAir==false)
+        if(Physics2D.Raycast(raycastPos.transform.position/*new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2 - 0.1f)*/, Vector2.down, 0.1f) && velocityInAir==false)
         {
             onGround = true;
             //jumpUp = jumpVar;
