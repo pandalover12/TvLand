@@ -31,6 +31,11 @@ public class RealmControl : MonoBehaviour {
     GameObject poss2;
     [SerializeField]
     Collectables collect;
+    [SerializeField]
+     SkinnedMeshRenderer cape;
+
+    [SerializeField]
+    GameObject Screen;
     enum Channel {Super, Western, Midieval};
 
 
@@ -72,6 +77,7 @@ public class RealmControl : MonoBehaviour {
         {
                 
             case 1: //channel 1: Super Hero
+                cape.enabled = true;
                 poss2.SetActive(true);
                 poses2s.SetActive(false);
                 POSES.SetActive(false);
@@ -90,6 +96,7 @@ public class RealmControl : MonoBehaviour {
                 collect.switcher = 1;
                 break;
             case 2: //channel 2: Western Hero
+                cape.enabled = false;
                 poss2.SetActive(false);
                 poses2s.SetActive(true);
                 POSES.SetActive(false);
@@ -108,6 +115,7 @@ public class RealmControl : MonoBehaviour {
                 mat.switchmat = 2;
                 break;
             case 3: //channel 3: Midieval Hero
+                cape.enabled = false;
                 poss2.SetActive(false);
                 poses2s.SetActive(false);
                 POSES.SetActive(true);
