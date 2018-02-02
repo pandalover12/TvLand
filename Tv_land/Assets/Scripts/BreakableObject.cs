@@ -74,9 +74,9 @@ public class BreakableObject : MonoBehaviour
                 Destroy(particles[i], 2f);
             }
 
-            //  Destroy(gameObject);
+              //Destroy(gameObject);
             this.GetComponent<MeshRenderer>().enabled = false;
-            this.GetComponent<SphereCollider>().enabled = false;
+            this.GetComponent<Collider>().enabled = false;
             StartCoroutine(DontDesory());
             GetComponent<Rigidbody>().AddExplosionForce(100, collision.transform.position, 1000);
         }

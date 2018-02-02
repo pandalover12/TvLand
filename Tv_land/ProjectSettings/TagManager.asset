@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - Drink
   - Life
+  - Water
   layers:
   - Default
   - TransparentFX

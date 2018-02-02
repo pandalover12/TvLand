@@ -13,5 +13,5 @@ public class DestroyableSphereChild : MonoBehaviour
         transform.localScale = GetComponentInParent<Transform>().localScale;
         GetComponent<CircleCollider2D>().radius = transform.localScale.x / 2;
 	}
-	
+
 }

@@ -32,9 +32,19 @@ public class WesternHero : BaseCharacter
         base.Initialize();
 
     }
-	
-	// Update is called once per frame
-	    void FixedUpdate() {
+
+    private void OnDisable()
+    {
+        cursorPos.GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    private void OnEnable()
+    {
+        cursorPos.GetComponent<MeshRenderer>().enabled = true;
+    }
+
+    // Update is called once per frame
+    void FixedUpdate() {
         if(onGround&& input.x != 0)
         {
             if(source.clip!=wal)

@@ -19,13 +19,13 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-      
+        Gizmos.DrawSphere(transform.position, deathDist);
     }
 
     // Use this for initialization
     void Start ()
     {
-  
+        Time.timeScale = 1;
    deathScreen.SetActive(false);
         ButtonRestart.SetActive(false);
    player = GameObject.FindGameObjectWithTag("Player");
@@ -35,15 +35,32 @@ public class PlayerDeath : MonoBehaviour
 	void Update ()
     {
 
-        if ( player.transform.position.y <-10)
+        if(Time.timeScale == 1 && Input.GetKey(KeyCode.Escape))
+        {
+            deathScreen.SetActive(true);
+        }
+
+        if(Time.timeScale == 0 && Input.GetKey(KeyCode.Escape))
+        {
+            deathScreen.SetActive(false);
+        }
+
+        if (Vector3.Distance(transform.position, player.transform.position) <= deathDist)
+        {
+            Time.timeScale = 0;
             dead = true;
-    
-   if (dead)
-   {
-       deathScreen.SetActive(true);
-            ButtonRestart.SetActive(true);
-     //  OnDrawGizmos();
-   }
+        }
+        else if (player.transform.position.y < -10)
+        {
+            Time.timeScale = 0;
+            dead = true;
+        }
+
+       if (dead)
+       {
+           deathScreen.SetActive(true);
+           ButtonRestart.SetActive(true);
+       }
 	}
 
     private void OnCollisionStay2D(Collision2D collision)
